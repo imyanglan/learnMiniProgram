@@ -1,4 +1,4 @@
-/* pages/home/home.wxss */
+/* pages/category/category.wxss */
 .title{
   color: red;
   font-size: 30px;

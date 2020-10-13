@@ -1,3 +1,20 @@
 <!--pages/about/about.wxml-->
-<text class="title">hello word</text>
-<button size="mini">按钮</button>
+<!-- 1.小程序的数据绑定 -->
+<!-- <view>Hellow Yanglan</view> -->
+<!-- 如果里面的名字以后有要更改的需求这里就需要将这个抽取出来将它变成一个变量 
+而一牵扯到变量肯定就和程序的逻辑是有关系的 而js文件里就是放我们一些逻辑相关的东西的-->
+<!-- 如果在逻辑层中抽取好的话这里就不用写死了 就可以在这里引用那个变量
+ 这里我们要用{{}}->Mustache 语法告诉小程序这里面的名字需要到js里找对应的值
+ 找到之后就会将值给替换过来-->
+<view>Hellow {{name}}</view>
+<!-- 这就是小程序里的数据绑定 -->
+<view>我的年龄：{{age}}</view>
+
+<!-- 2.列表展示 wx:for 用于做循环的指令-->
+<view wx:for="{{students}}">{{item.name}}---{{item.age}}岁</view>
+
+<!-- 3.事件监听 改变data -->
+<view>当前计数：{{counter}}</view>
+<!-- 这里我们要绑定一个事件bindtap:点击事件 绑定到某一个函数 将函数名称绑定进来-->
+<button size="mini" bindtap="handleBtnClick">+</button>
+<button size="mini" bindtap="handleSubtraction">-</button>
